@@ -14,7 +14,7 @@ CSS (Styling & Animations)
 JavaScript (Interactivity)
 GitHub Pages (Hosting)
 📌 Live Demo
-🔗 View My Portfolio Here: https://nischay1100.github.io/portfolio-website/
+🔗 View My Portfolio Here: https://nischay1100.github.io/portfolio-2024/
 
 📞 Contact Me
 📧 Email: npstudio1100@gmail.com
