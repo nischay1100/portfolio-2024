@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Nischay Pandey</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Header-->
+ 
+ <header class="navbar">
+  <div class="logo">Nischay<span>.Dev</span></div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div> 
+  <nav class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="projects.html">Projects</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+<button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle-btn">🌙</button>
+
+</header>
+
+  <!-- Services Section -->
+  <section class="services reveal fade-up">
+    <h2 class="section-title">My <span>Services</span></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Responsive websites built with HTML, CSS, JS, and modern frameworks like React.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>UI/UX Design</h3>
+        <p>Creative UI/UX designs with Figma & Adobe tools to enhance user experience.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Branding & Graphics</h3>
+        <p>Logo, poster, and branding designs tailored to your vision and audience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Brochure -->
+  <section class="brochure reveal">
+    <h2 class="section-title">Download <span>Brochure</span></h2>
+    <a href="assets/Nischay_Brochure.pdf" download class="download-btn">Download PDF <i class="fas fa-download"></i></a>
+  </section>
+
+  <!-- Pricing Table -->
+  <section class="pricing reveal">
+    <h2 class="section-title">Pricing <span>Plans</span></h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <p class="price">₹999</p>
+        <ul>
+          <li>1 Page Website</li>
+          <li>Basic SEO</li>
+          <li>1 Week Support</li>
+        </ul>
+      </div>
+      <div class="pricing-card popular">
+        <h3>Standard</h3>
+        <p class="price">₹2499</p>
+        <ul>
+          <li>Up to 5 Pages</li>
+          <li>Responsive Design</li>
+          <li>1 Month Support</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Premium</h3>
+        <p class="price">₹4999</p>
+        <ul>
+          <li>Unlimited Pages</li>
+          <li>Custom Features</li>
+          <li>3 Months Support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <footer class="footer">
+  <div class="footer-content">
+    <p>Made with ❤️ by Nischay Pandey</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/nischay-pandey-126670368" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/nischay1100" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/nischay1113" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/MYUSERNAME" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <!-- its for JS Reveal Animation -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  document.body.style.opacity = 1;
+
+  document.querySelectorAll(".fade-up").forEach((el, i) => {
+    setTimeout(() => {
+      el.classList.add("visible");
+    }, i * 150);
+  });
+
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal, .fade-up");
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < windowHeight - 100) {
+        el.classList.add("active", "visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  menuToggle?.addEventListener("click", () => {
+    navLinks?.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
+  });
+
+  document.querySelectorAll("a[href]").forEach(link => {
+    const href = link.getAttribute("href");
+    if (href.startsWith("#") || link.target === "_blank") return;
+
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = href;
+      }, 300);
+    });
+  });
+
+  const toggleBtn = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("theme");
+  
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+    toggleBtn.textContent = "☀️";
+  } else {
+    toggleBtn.textContent = "🌙";
+  }
+
+  toggleBtn?.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+    if (document.body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+      toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.textContent = "🌙";
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

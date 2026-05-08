@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume | Nischay Pandey</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .certificate-popup {
+      display: none;
+      position: absolute;
+      background: #fff;
+      padding: 20px;
+      border: 2px solid #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      max-width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .certificate-popup .close-btn {
+      display: block;
+      text-align: right;
+      cursor: pointer;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    #hideCertsBtn {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+ 
+ <header class="navbar">
+  <div class="logo">Nischay<span>.Dev</span></div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div> 
+  <nav class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="projects.html">Projects</a>
+    <a href="services.html">Services</a>
+    <a href="resume.html" class="active">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+<button id="themeToggle" aria-label="Toggle Theme" class="theme-toggle-btn">🌙</button>
+
+</header>
+
+  <section class="resume reveal">
+    <h2 class="section-title">My <span>Resume</span></h2>
+    <div class="download-resume" style="text-align:center; margin-bottom: 20px;">
+      <a href="assets/Nischay_Pandey_Resume.pdf" class="btn" download>📄 Download Resume</a>
+    </div>
+    <div class="resume-box">
+       <!-- Education -->
+    <div class="resume-box">
+      <h3>Education</h3>
+      <div class="resume-item">
+        <h4>Diploma in Information Technology</h4>
+        <span>2022 - 2025 | Government Polytechnic Nainital</span>
+        <p>Studying core IT concepts, programming, web development, and IoT technologies.</p>
+      </div>
+      <div class="resume-item">
+        <h4>12th (Science Stream)</h4>
+        <span>2020 - 2021 | XYZ Inter College</span>
+        <p>Completed higher secondary with PCM, focused on technical foundation and logical reasoning.</p>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="resume-box">
+      <h3>Experience</h3>
+      <div class="resume-item">
+        <h4>Frontend Intern</h4>
+        <span>Jan 2025 - Mar 2025 | xyz</span>
+        <p>Worked on HTML, CSS, JavaScript & responsive design. Created portfolio and landing pages.</p>
+      </div>
+      <div class="resume-item">
+        <h4>Freelance Projects</h4>
+        <span>2023 - Present</span>
+        <p>Delivered projects for clients involving portfolio websites, posters, and UI/UX designs.</p>
+      </div>
+    </div>
+
+    <!-- Projects Overview -->
+    <div class="resume-box">
+      <h3>Projects Overview</h3>
+      <div class="resume-item">
+        <h4>Personal Portfolio Website</h4>
+        <span>HTML, CSS, JS</span>
+        <p>Responsive website to showcase my resume, services, and contact details.</p>
+      </div>
+      <div class="resume-item">
+        <h4>Rhododendron Tea Landing Page</h4>
+        <span>Freelance | 2024</span>
+        <p>Created a product page for Nirvana Organic with product info and poster downloads.</p>
+      </div>
+      <a href="projects.html" class="btn">See All Projects</a>
+    </div>
+
+    <!-- Certifications -->
+      <h3>Certifications</h3>
+      <div id="certifications">
+        <div class="resume-item">
+          <h4>Frontend Development - Coursera</h4>
+          <span>Issued: Jan 2024</span>
+          <a href="#" class="btn show-cert" data-title="Frontend Development - Coursera" data-link="certificates/frontend-coursera.pdf">View Certificate</a>
+        </div>
+        <div class="resume-item">
+          <h4>Python for Beginners - Udemy</h4>
+          <span>Issued: Aug 2023</span>
+          <a href="#" class="btn show-cert" data-title="Python for Beginners - Udemy" data-link="certificates/python-udemy.pdf">View Certificate</a>
+        </div>
+      </div>
+      <button id="viewMoreBtn" class="btn">View More</button>
+      <button id="hideCertsBtn" class="btn">Hide Certificates</button>
+    </div>
+
+    <div id="certificatePopup" class="certificate-popup">
+      <span class="close-btn" onclick="this.parentElement.style.display='none'">&times;</span>
+      <h4 id="certTitle"></h4>
+      <iframe id="certFrame" src="" width="100%" height="400px"></iframe>
+      <a id="certDownload" class="btn" href="#" download>Download Certificate</a>
+    </div>
+
+     <!-- Skills -->
+    <div class="resume-box">
+      <h3>Skills</h3>
+      <div class="skill-bar"><span>HTML/CSS</span><div class="progress"><div style="width: 90%;"></div></div></div>
+      <div class="skill-bar"><span>JavaScript</span><div class="progress"><div style="width: 75%;"></div></div></div>
+      <div class="skill-bar"><span>React JS</span><div class="progress"><div style="width: 65%;"></div></div></div>
+      <div class="skill-bar"><span>Figma / Canva</span><div class="progress"><div style="width: 85%;"></div></div></div>
+    </div>
+
+    <!-- Tools & Soft Skills -->
+    <div class="resume-box">
+      <h3>Tools & Soft Skills</h3>
+      <ul>
+        <li>VS Code, Git, GitHub, Canva, Figma, ChatGPT</li>
+        <li>Teamwork, Time Management, Communication, Creativity</li>
+      </ul>
+    </div>
+
+    <!-- Achievements -->
+    <div class="resume-box">
+      <h3>Achievements</h3>
+      <ul>
+        <li>Completed 10+ freelance and college-based projects.</li>
+        <li>Maintained 1K+ YouTube subscribers sharing coding and design content.</li>
+      </ul>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="resume-box">
+      <h3>Client Testimonials</h3>
+      <p>"Nischay delivered our landing page with professional design and perfect responsiveness." – Nirvana Organic</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="download-resume" style="text-align:center; margin-top: 20px;">
+      <a href="contact.html" class="btn">💬 Hire Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="footer-content">
+    <p>Made with ❤️ by Nischay Pandey</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/nischay-pandey-126670368" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/nischay1100" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/nischay1113" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/YOURUSERNAME" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // for Fade Page In
+    document.body.style.opacity = 1;
+
+    // Animate .reveal elements
+    document.querySelectorAll(".reveal").forEach((el, i) => {
+      el.style.opacity = 0;
+      el.style.transform = "translateY(30px)";
+      setTimeout(() => {
+        el.style.transition = "0.7s ease";
+        el.style.opacity = 1;
+        el.style.transform = "translateY(0)";
+      }, i * 200);
+    });
+
+    // Certificate popup
+    const certContainer = document.getElementById("certifications");
+    const popup = document.getElementById("certificatePopup");
+    const certTitle = document.getElementById("certTitle");
+    const certFrame = document.getElementById("certFrame");
+    const certDownload = document.getElementById("certDownload");
+
+    function bindCertEvents() {
+      document.querySelectorAll(".show-cert").forEach(btn => {
+        btn.onclick = e => {
+          e.preventDefault();
+          if (!popup || !certTitle || !certFrame || !certDownload) return;
+          certTitle.textContent = btn.dataset.title;
+          certFrame.src = btn.dataset.link;
+          certDownload.href = btn.dataset.link;
+          btn.closest(".resume-item").appendChild(popup);
+          popup.style.display = "block";
+        };
+      });
+    }
+    bindCertEvents();
+
+    // for Load More Certificates
+    const viewBtn = document.getElementById("viewMoreBtn");
+    const hideBtn = document.getElementById("hideCertsBtn");
+    const moreCerts = [
+      { title: "Web Design Fundamentals - FreeCodeCamp", date: "Issued: Nov 2023", link: "certificates/webdesign-freecodecamp.pdf" },
+      { title: "Introduction to AI - Great Learning", date: "Issued: Oct 2023", link: "certificates/ai-greatlearning.pdf" },
+      { title: "JavaScript Essentials - Infosys Springboard", date: "Issued: Jul 2023", link: "certificates/js-infosys.pdf" },
+      { title: "Cloud Basics - AWS", date: "Issued: Jun 2023", link: "certificates/cloud-aws.pdf" }
+    ];
+    let shownCount = 0;
+
+    if (viewBtn && certContainer) {
+      viewBtn.onclick = () => {
+        const toShow = moreCerts.slice(shownCount, shownCount + 2);
+        toShow.forEach(cert => {
+          const div = document.createElement("div");
+          div.className = "resume-item";
+          div.innerHTML = `
+            <h4>${cert.title}</h4>
+            <span>${cert.date}</span>
+            <a href="#" class="btn show-cert" data-title="${cert.title}" data-link="${cert.link}">View Certificate</a>
+          `;
+          certContainer.appendChild(div);
+        });
+        shownCount += 2;
+        if (shownCount >= moreCerts.length) {
+          viewBtn.textContent = "No more certificates";
+          viewBtn.disabled = true;
+        }
+        if (hideBtn) hideBtn.style.display = "inline-block";
+        bindCertEvents();
+      };
+    }
+
+    if (hideBtn && certContainer) {
+      hideBtn.onclick = () => {
+        const items = certContainer.querySelectorAll(".resume-item");
+        for (let i = items.length - 1; i >= 2; i--) {
+          certContainer.removeChild(items[i]);
+          shownCount--;
+          if (shownCount <= 2) break;
+        }
+
+        if (viewBtn && shownCount < moreCerts.length) {
+          viewBtn.textContent = "View More";
+          viewBtn.disabled = false;
+        }
+
+        if (shownCount <= 2 && hideBtn) {
+          hideBtn.style.display = "none";
+        }
+      };
+    }
+
+    // Fade Out on Navigation
+    document.querySelectorAll("a[href]").forEach(link => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("#") || link.target === "_blank") return;
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = href;
+        }, 300);
+      });
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        document.body.classList.toggle("no-scroll");
+      });
+    }
+
+    // Load and Toggle Theme
+    const toggleBtn = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+      if (toggleBtn) toggleBtn.textContent = "☀️";
+    } else {
+      if (toggleBtn) toggleBtn.textContent = "🌙";
+    }
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        if (document.body.classList.contains("light-theme")) {
+          localStorage.setItem("theme", "light");
+          toggleBtn.textContent = "☀️";
+        } else {
+          localStorage.setItem("theme", "dark");
+          toggleBtn.textContent = "🌙";
+        }
+      });
+    }
+  });
+</script>
+
+
+</body>
+</html>
